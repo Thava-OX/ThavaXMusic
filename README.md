@@ -11,9 +11,6 @@
  -->    <img align="middle" src="https://profile-counter.glitch.me/Thava-OX/count.svg" />
 </h2>
 
-![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Thava-OX&repo=ThavaXMusic&theme=flag-india)
-
-
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
 <h2 align="center">
@@ -21,6 +18,8 @@
 
  𝙷𝙴𝚁𝙾𝙺𝚄 + 𝚅𝙿𝚂 
 </h2>
+
+![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Thava-OX&repo=ThavaXMusic&theme=flag-india)
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
