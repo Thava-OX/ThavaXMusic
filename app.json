@@ -34,8 +34,8 @@
       },
       "MUSIC_BOT_NAME": {
         "description": "A name for your Music Bot. Please don't use ascii characters",
-        "value": "",
-        "required": false
+        "value": "Thava X Music",
+        "required": true
       },  
       "OWNER_ID": {
         "description": "The user id of user whom you would like to add as OWNER.",
@@ -49,8 +49,8 @@
       },
       "START_STICKER_ID": {
         "description": "Add Your Start Sticker Id.",
-        "value": "",
-        "required": false
+        "value": "CAACAgUAAxkBAAIYJ2XDYrt9C1aT2TMAAVbvhu7GQt4pxQACOg4AAs7jGVZZ_1ODkCxOcx4E",
+        "required": true
       },  
       "HEROKU_API_KEY": {
         "description": "Your Heroku account's API key",
@@ -66,6 +66,16 @@
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Please don't use Channel ID.",
         "value": "",
         "required": true
+      },
+      "UPSTREAM_REPO": {
+        "description": "If you dont know this, Leave as it is",
+        "value": "https://github.com/Thava-OX/ThavaXMusic",
+        "required": true
+      },
+      "UPSTREAM_BRANCH": {
+        "description": "Upstream Repo's Branch Name",
+        "value": "Main",
+        "required": true    
       }
     },
     "buildpacks": [
