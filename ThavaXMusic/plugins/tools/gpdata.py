@@ -15,4 +15,4 @@ async def bot_leave(_, message):
     text = "**sᴜᴄᴄᴇssғᴜʟʟʏ ʜɪʀᴏ !!.**"
     await message.reply_text(text)
     await delete_servred_chat(chat_id)
-    await app.leave_chat(chat_id=chat_id, delete=True)￼Enter
+    await app.leave_chat(chat_id=chat_id, delete=True)
