@@ -1,6 +1,6 @@
 import random
 import string
-
+import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
@@ -19,6 +19,14 @@ from ThavaXMusic.utils.inline import (
     playlist_markup,
     slider_markup,
     track_markup,
+)
+from ThavaXMusic.utils.database import (
+    add_served_chat,
+    add_served_user,
+    blacklisted_chats,
+    get_lang,
+    is_banned_user,
+    is_on_off,
 )
 from ThavaXMusic.utils.logger import play_logs
 from ThavaXMusic.utils.stream.stream import stream
@@ -85,6 +93,7 @@ async def play_commnd(
     url,
     fplay,
 ):
+    await add_served_chat(message.chat.id)
     mystic = await message.reply_text(
         _["play_2"].format(channel) if channel else random.choice(EMOJI)
     )
