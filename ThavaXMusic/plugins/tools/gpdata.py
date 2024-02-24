@@ -5,7 +5,6 @@ from ThavaXMusic import app
 from config import OWNER_ID
 from ThavaXMusic.misc import SUDOERS
 from pyrogram.types import Message
-from ThavaXMusic.utils.THAVABin import admin_filter
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from ThavaXMusic.utils.database import delete_served_chat
 
