@@ -3,7 +3,6 @@ from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from strings import get_string, helpers
 from ThavaXMusic import app
-from pyrogram.types import InputMediaVideo
 from ThavaXMusic.misc import SUDOERS
 from ThavaXMusic.utils.database import add_sudo, remove_sudo
 from ThavaXMusic.utils.decorators.language import language
