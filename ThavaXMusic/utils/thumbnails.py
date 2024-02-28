@@ -11,10 +11,8 @@ from youtubesearchpython.__future__ import VideosSearch
 import numpy as np
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
-
 def make_col():
     return (random.randint(0,255),random.randint(0,255),random.randint(0,255))
-
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
