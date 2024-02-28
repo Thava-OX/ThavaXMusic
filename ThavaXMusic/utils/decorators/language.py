@@ -1,6 +1,7 @@
 from ThavaXMusic.misc import SUDOERS
 from ThavaXMusic.utils.database import get_lang, is_maintenance
 from strings import get_string
+from ThavaXMusic import app
 
 
 def language(mystic):
