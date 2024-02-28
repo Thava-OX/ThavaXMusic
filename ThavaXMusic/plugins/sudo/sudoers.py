@@ -67,8 +67,8 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
         caption = f"<u><b>**˹ʟɪsᴛ ᴏғ ʙᴏᴛ ᴍᴏᴅᴇʀᴀᴛᴏʀs˼**\n\n🥀 ᴏᴡɴᴇʀ :</b></u>\n ‣ {user_mention}\n\n"
         sudo_users_caption = "<u><b>✨ sᴜᴅᴏ ᴜsᴇʀs :</b></u>\n"
 
-        keyboard.append([InlineKeyboardButton("« ᴠɪᴇᴡ ᴏᴡɴᴇʀ »", url=f"tg://openmessage?user_id={OWNER_ID}")])
-        keyboard.append([InlineKeyboardButton("« ᴄʟᴏsᴇ »",callback_data="close_data")])
+        keyboard.append([InlineKeyboardButton("ᴠɪᴇᴡ ᴏᴡɴᴇʀ", url=f"tg://openmessage?user_id={OWNER_ID}")])
+       #keyboard.append([InlineKeyboardButton("ᴄʟᴏsᴇ",callback_data="close_data")])
         
         count = 1
         for user_id in SUDOERS:
@@ -86,6 +86,7 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
 
         # Add a "Back" button at the end
         keyboard.append([InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="back_to_main_menu")])
+        keyboard.append([InlineKeyboardButton("ᴄʟᴏsᴇ",callback_data="close_data")])
 
         if keyboard:
             reply_markup = InlineKeyboardMarkup(keyboard)
