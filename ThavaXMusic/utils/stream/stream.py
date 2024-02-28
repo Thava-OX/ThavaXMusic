@@ -13,7 +13,7 @@ from ThavaXMusic.utils.exceptions import AssistantErr
 from ThavaXMusic.utils.inline import aq_markup, close_markup, stream_markup
 from ThavaXMusic.utils.pastebin import THAVABin
 from ThavaXMusic.utils.stream.queue import put_queue, put_queue_index
-from ThavaXMusic.utils.thumbnails import get_thumb
+from ThavaXMusic.utils.thumbnails import get_thumb, get_qthumb
 
 
 async def stream(
@@ -156,10 +156,13 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
+            qimg = await gen_qthumb(vidid)
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            await app.send_photo(
+                photo=qimg,
                 chat_id=original_chat_id,
-                text=_["queue_4"].format(position, title[:27], duration_min, user_name),
+                caption=_["queue_4"].format(
+                    position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
