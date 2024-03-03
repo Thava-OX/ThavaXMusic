@@ -26,6 +26,7 @@ from ThavaXMusic.utils.inline import close_markup, stream_markup, stream_markup_
 from ThavaXMusic.utils.stream.autoclear import auto_clean
 from ThavaXMusic.utils.thumbnails import get_thumb
 from config import (
+    POWERED_BY,
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
     STREAM_IMG_URL,
@@ -280,6 +281,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     title[:23],
                     duration,
                     user,
+                    POWERED_BY,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -316,6 +318,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     title[:23],
                     duration,
                     user,
+                    POWERED_BY,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -331,7 +334,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             button = stream_markup(_, chat_id)
             run = await CallbackQuery.message.reply_photo(
                 photo=STREAM_IMG_URL,
-                caption=_["stream_2"].format(user),
+                caption=_["stream_2"].format(user, POWERED_BY),
                 reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
@@ -358,7 +361,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
                     caption=_["stream_1"].format(
-                        config.SUPPORT_CHAT, title[:23], duration, user
+                        config.SUPPORT_CHAT, title[:23], duration, user, POWERED_BY
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -371,7 +374,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
                     caption=_["stream_1"].format(
-                        config.SUPPORT_CHAT, title[:23], duration, user
+                        config.SUPPORT_CHAT, title[:23], duration, user, POWERED_BY
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -387,6 +390,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         title[:23],
                         duration,
                         user,
+                        POWERED_BY,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
