@@ -16,7 +16,6 @@ from config import BANNED_USERS, POWERED_BY
 
 basic = {}
 
-
 def get_image(videoid):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
