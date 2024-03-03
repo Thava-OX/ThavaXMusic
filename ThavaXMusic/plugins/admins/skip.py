@@ -10,7 +10,7 @@ from ThavaXMusic.utils.decorators import AdminRightsCheck
 from ThavaXMusic.utils.inline import close_markup, stream_markup
 from ThavaXMusic.utils.stream.autoclear import auto_clean
 from ThavaXMusic.utils.thumbnails import get_thumb
-from config import BANNED_USERS
+from config import BANNED_USERS, POWERED_BY
 
 
 @app.on_message(
@@ -123,6 +123,7 @@ async def skip(cli, message: Message, _, chat_id):
                 title[:23],
                 check[0]["dur"],
                 user,
+                POWERED_BY,
             ),
             reply_markup=InlineKeyboardMarkup(button),
         )
@@ -156,6 +157,7 @@ async def skip(cli, message: Message, _, chat_id):
                 title[:23],
                 check[0]["dur"],
                 user,
+                POWERED_BY,
             ),
             reply_markup=InlineKeyboardMarkup(button),
         )
@@ -196,7 +198,7 @@ async def skip(cli, message: Message, _, chat_id):
                 if str(streamtype) == "audio"
                 else config.TELEGRAM_VIDEO_URL,
                 caption=_["stream_1"].format(
-                    config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                    config.SUPPORT_CHAT, title[:23], check[0]["dur"], user, POWERED_BY
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -209,7 +211,7 @@ async def skip(cli, message: Message, _, chat_id):
                 if str(streamtype) == "audio"
                 else config.TELEGRAM_VIDEO_URL,
                 caption=_["stream_1"].format(
-                    config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                    config.SUPPORT_CHAT, title[:23], check[0]["dur"], user, POWERED_BY
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -225,6 +227,7 @@ async def skip(cli, message: Message, _, chat_id):
                     title[:23],
                     check[0]["dur"],
                     user,
+                    POWERED_BY,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
