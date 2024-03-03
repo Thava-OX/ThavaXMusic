@@ -8,7 +8,7 @@ from ThavaXMusic.core.call import THAVA
 from ThavaXMusic.utils import bot_sys_stats
 from ThavaXMusic.utils.decorators.language import language
 from ThavaXMusic.utils.inline import supp_markup
-from config import BANNED_USERS, PING_IMG_URL
+from config import BANNED_USERS, PING_IMG_URL, SUPPORT_CHAT
 
 
 @app.on_message(filters.command(["ping", "alive"]) & ~BANNED_USERS)
@@ -23,6 +23,6 @@ async def ping_com(client, message: Message, _):
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(
-        _["ping_2"].format(resp, app.mention, UP, RAM, CPU, DISK, pytgping),
+        _["ping_2"].format(resp, app.mention, UP, RAM, CPU, DISK, pytgping, SUPPORT_CHAT),
         reply_markup=supp_markup(_),
     )
