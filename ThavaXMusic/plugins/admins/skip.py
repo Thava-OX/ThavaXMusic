@@ -12,7 +12,6 @@ from ThavaXMusic.utils.stream.autoclear import auto_clean
 from ThavaXMusic.utils.thumbnails import get_thumb
 from config import BANNED_USERS, POWERED_BY
 
-
 @app.on_message(
     filters.command(["skip", "cskip", "next", "cnext"]) & filters.group & ~BANNED_USERS
 )
