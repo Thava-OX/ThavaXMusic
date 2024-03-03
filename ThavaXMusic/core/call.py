@@ -17,6 +17,7 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
+from config import POWERED_BY
 from ThavaXMusic import LOGGER, YouTube, app
 from ThavaXMusic.misc import db
 from ThavaXMusic.utils.database import (
@@ -401,6 +402,7 @@ class Call(PyTgCalls):
                         title[:23],
                         check[0]["dur"],
                         user,
+                        POWERED_BY,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -448,6 +450,7 @@ class Call(PyTgCalls):
                         title[:23],
                         check[0]["dur"],
                         user,
+                        POWERED_BY,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -474,7 +477,7 @@ class Call(PyTgCalls):
                 run = await app.send_photo(
                     chat_id=original_chat_id,
                     photo=config.STREAM_IMG_URL,
-                    caption=_["stream_2"].format(user),
+                    caption=_["stream_2"].format(user, POWERED_BY),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
                 db[chat_id][0]["mystic"] = run
@@ -506,7 +509,7 @@ class Call(PyTgCalls):
                         if str(streamtype) == "audio"
                         else config.TELEGRAM_VIDEO_URL,
                         caption=_["stream_1"].format(
-                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user, POWERED_BY
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
@@ -518,7 +521,7 @@ class Call(PyTgCalls):
                         chat_id=original_chat_id,
                         photo=config.SOUNCLOUD_IMG_URL,
                         caption=_["stream_1"].format(
-                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user, POWERED_BY
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
@@ -535,6 +538,7 @@ class Call(PyTgCalls):
                             title[:23],
                             check[0]["dur"],
                             user,
+                            POWERED_BY,
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
